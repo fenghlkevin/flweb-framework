@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="false" xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- serviceFLow Info Receiver -->
+	<appender name="serviceFlowLogAppender" class="com.iestudio.framework.logwriter.appender.RollingTimerMoveFileAppender">
+		<param name="fileFormat" value="[ServiceLog]%%(Date#yyyyMMddHHmmss)%%[.log]" />
+		<param name="Append" value="true" />
+		<param name="DateSwitch" value="15" />
+		<param name="MaxCount" value="500" />
+		<param name="maxFileSize" value="-1" />
+		<param name="logPath" value="${serviceflow_logpath}" />
+		<param name="targetPath" value="${serviceflow_targetpath}" />
+		<param name="File" value="noValue" />
+		<param name="encoding" value="${logencoding}" />
+		<layout class="com.iestudio.framework.logwriter.layout.AssemblyLogItemLayout">
+			<param name="format" value="Date#yyyyMMddHHmmss%%|-|%%REQUESTID%%|-|%%TimeMillis%%|-|%%REQUESTTYPE%%|-|%%USERID%%|-|%%SERVICEID%%|-|%%REQUESTTIME%%|-|%%RESPONSETIME%%|-|%%RESPONSETYPE%%|-|%%RESPONSELEN%%|-|%%RESPONSECODE%%|-|%%ISSUCCES" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="levelMax" value="INFO" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+	
+	<!-- request/response Info Receiver -->
+	<appender name="requestlog" class="com.iestudio.framework.logwriter.appender.RollingTimerMoveFileAppender">
+		<param name="fileFormat" value="[RequestLog_]%%(Date#yyyyMMddHHmmss)%%[.log]" />
+		<param name="Append" value="true" />
+		<param name="DateSwitch" value="15" />
+		<param name="MaxCount" value="500" />
+		<param name="maxFileSize" value="-1" />
+		<param name="logPath" value="${request_logpath}" />
+		<param name="targetPath" value="${request_targetpath}" />
+		<param name="File" value="noValue" />
+		<param name="encoding" value="${logencoding}" />
+		<layout class="com.iestudio.framework.logwriter.layout.AssemblyLogItemLayout">
+			<param name="format" value="Date#yyyyMMddHHmmss%%|-|%%REQUESTID%%|-|%%TimeMillis%%|-|%%URI%%|-|%%OTHER" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="levelMax" value="INFO" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<!-- Console Receiver to File && Module Debug template -->
+	<appender name="org.apache.log4j.ConsoleAppender.file" class="com.iestudio.framework.logwriter.appender.RollingTimerMoveFileAppender">
+		<param name="fileFormat" value="[GIS_CONSOLE_]%%(Date#yyyyMMdd)%%[_]%%(Date#HH)%%[.LOG]" />
+		<param name="Append" value="true" />
+		<param name="DateSwitch" value="0 0 */1 * * ?" />
+		<param name="MaxCount" value="-1" />
+		<param name="maxFileSize" value="-1" />
+		<param name="logPath" value="${console_logpath}" />
+		<param name="targetPath" value="${console_targetpath}" />
+		<param name="File" value="noValue" />
+		<param name="encoding" value="${logencoding}" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="#|%d{yyyy-MM-dd HH:mm:ss}|%p|KFGISCore v1.0.0|%m|ThreadName:[%t] %n" />
+		</layout>
+		<filter class="com.iestudio.framework.logwriter.filter.PackageFilter">
+			<param name="filteringPackage" value="cn.com.cennavi.kfgis.service" />
+			<param name="filteringPackage" value="org.springframework" />
+			<param name="filteringPackage" value="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor" />
+		</filter>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="${console_levelMin}" />
+			<param name="levelMax" value="${console_levelMax}" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<!-- Console Receiver -->
+	<appender name="org.apache.log4j.ConsoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="#|%d{yyyy-MM-dd HH:mm:ss}|%p|KFGISCore v1.0.0|%m|ThreadName:[%t] %n" />
+		</layout>
+		<filter class="com.iestudio.framework.logwriter.filter.PackageFilter">
+			<param name="filteringPackage" value="cn.com.cennavi.kfgis.service" />
+			<!-- param name="filteringPackage" value="org.springframework" /-->
+			<param name="filteringPackage" value="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor" />
+		</filter>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="${console_levelMin}" />
+			<param name="levelMax" value="${console_levelMax}" />
+			<param name="AcceptOnMatch" value="true" />
+		</filter>
+	</appender>
+
+	<!-- System perf4j to File && Module perf4j template -->
+	<appender name="org.apache.log4j.ConsoleAppender.file.perf4j" class="com.iestudio.framework.logwriter.appender.RollingTimerMoveFileAppender">
+		<param name="fileFormat" value="[GIS_PERF4J_]%%(Date#yyyyMMdd)%%[_]%%(Date#HH)%%[.LOG]" />
+		<param name="Append" value="true" />
+		<param name="DateSwitch" value="0 0 */1 * * ?" />
+		<param name="MaxCount" value="-1" />
+		<param name="maxFileSize" value="-1" />
+		<param name="logPath" value="${perf4j_logpath}" />
+		<param name="targetPath" value="${perf4j_targetpath}" />
+		<param name="File" value="noValue" />
+		<param name="encoding" value="${logencoding}" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%m%n" />
+		</layout>
+	</appender>
+
+	<!-- module debug log -->
+	<logger name="cn.com.cennavi.kfgis.service">
+		<level value="${debug_outputlevel}" />
+	</logger>
+
+	<logger name="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor">
+		<level value="${perf4j_outputlevel}" />
+		<appender-ref ref="org.apache.log4j.ConsoleAppender.file.perf4j" />
+	</logger>
+
+	<!-- service Info Level -->
+	<logger name="cn.com.cennavi.kfgis.serviceFlowlog">
+		<level value="${service_outputlevel}" />
+		<appender-ref ref="serviceFlowLogAppender" />
+	</logger>
+	
+	<!-- request/response Level -->
+	<logger name="cn.com.cennavi.kfgis.requestlog">
+		<level value="${request_outputlevel}" />
+		<appender-ref ref="requestlog" />
+	</logger>
+	
+	<!-- root Level -->
+	<root>
+		<level value="${root_outputlevel}" />
+		<appender-ref ref="org.apache.log4j.ConsoleAppender" />
+		<!-- org.apache.log4j.ConsoleAppender.file 为系统日志输出 控制台信息，暂时不能输出System.out,以及 System.err -->
+		<appender-ref ref="org.apache.log4j.ConsoleAppender.file" />
+	</root>
+
+</log4j:configuration>
