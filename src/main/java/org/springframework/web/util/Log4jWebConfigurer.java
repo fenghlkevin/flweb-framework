@@ -24,10 +24,9 @@ import java.net.URL;
 import javax.servlet.ServletContext;
 
 import org.springframework.util.Log4jConfigurer;
-import org.springframework.util.ResourceUtils;
 import org.springframework.util.SystemPropertyUtils;
 
-import cn.com.cennavi.kfgis.framework.exception.NServiceInternalException;
+import com.kevin.iesutdio.kfgis.web.framework.exception.NServiceInternalException;
 
 /**
  * Convenience class that performs custom log4j initialization for web environments,

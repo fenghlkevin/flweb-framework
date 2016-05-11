@@ -35,7 +35,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.AbstractView;
 
-import cn.com.cennavi.kfgis.framework.contant.FrameworkGISContants;
+import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkGISContants;
 
 /**
  * Spring-MVC {@link View} that renders JSON content by serializing the model for the current request using <a

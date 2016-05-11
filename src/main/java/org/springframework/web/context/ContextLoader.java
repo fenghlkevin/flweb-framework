@@ -37,7 +37,7 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ObjectUtils;
 
-import cn.com.cennavi.kfgis.framework.exception.NServiceInternalException;
+import com.kevin.iesutdio.kfgis.web.framework.exception.NServiceInternalException;
 
 /**
  * Performs the actual initialization work for the root application context.

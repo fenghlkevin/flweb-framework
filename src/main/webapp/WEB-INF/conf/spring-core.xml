@@ -19,7 +19,7 @@
 	</bean>
 
 	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
-	<context:component-scan base-package="cn.**" />
+	<context:component-scan base-package="com.**" />
 	
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
@@ -36,8 +36,8 @@
 		记录应答时间 A3
 	 -->
 	<mvc:interceptors>
-		<bean class="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor"/>
-		<bean class="cn.com.cennavi.kfgis.framework.interceptor.LogInterceptor"/>
+		<bean class="com.kevin.iesutdio.kfgis.web.framework.interceptor.Perf4jInterceptor"/>
+		<bean class="com.kevin.iesutdio.kfgis.web.framework.interceptor.LogInterceptor"/>
 		<bean class=" cn.com.cennavi.kfgis.framework.interceptor.SystemInterceptor"/>
 <!-- 		<bean class="cn.com.cennavi.kfgis.framework.auth.AuthInterceptor" />
  -->		
@@ -98,7 +98,7 @@
 	</bean> -->
 	
 	<bean id="exceptionResolver"
-		class="cn.com.cennavi.kfgis.framework.resolver.BaseServerCodeExceptionResolver">
+		class="com.kevin.iesutdio.kfgis.web.framework.resolver.BaseServerCodeExceptionResolver">
 	</bean>
 	
 	<!-- 数据库和iBatis的配置 -->

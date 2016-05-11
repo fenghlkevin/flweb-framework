@@ -7,7 +7,7 @@
 
 	
 	<!-- bean id="authdao"
-		class="cn.com.cennavi.kfgis.framework.dao.impl.AuthDAOImpl">
+		class="AuthDAOImpl">
 		<property name="dataSource" ref="dataSource"/>
 	</bean -->
 

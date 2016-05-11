@@ -62,7 +62,7 @@
 		<filter class="com.iestudio.framework.logwriter.filter.PackageFilter">
 			<param name="filteringPackage" value="cn.com.cennavi.kfgis.service" />
 			<param name="filteringPackage" value="org.springframework" />
-			<param name="filteringPackage" value="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor" />
+			<param name="filteringPackage" value="com.kevin.iesutdio.kfgis.web.framework.interceptor.Perf4jInterceptor" />
 		</filter>
 		<filter class="org.apache.log4j.varia.LevelRangeFilter">
 			<param name="LevelMin" value="${console_levelMin}" />
@@ -79,7 +79,7 @@
 		<filter class="com.iestudio.framework.logwriter.filter.PackageFilter">
 			<param name="filteringPackage" value="cn.com.cennavi.kfgis.service" />
 			<!-- param name="filteringPackage" value="org.springframework" /-->
-			<param name="filteringPackage" value="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor" />
+			<param name="filteringPackage" value="com.kevin.iesutdio.kfgis.web.framework.interceptor.Perf4jInterceptor" />
 		</filter>
 		<filter class="org.apache.log4j.varia.LevelRangeFilter">
 			<param name="LevelMin" value="${console_levelMin}" />
@@ -109,7 +109,7 @@
 		<level value="${debug_outputlevel}" />
 	</logger>
 
-	<logger name="cn.com.cennavi.kfgis.framework.interceptor.Perf4jInterceptor">
+	<logger name="com.kevin.iesutdio.kfgis.web.framework.interceptor.Perf4jInterceptor">
 		<level value="${perf4j_outputlevel}" />
 		<appender-ref ref="org.apache.log4j.ConsoleAppender.file.perf4j" />
 	</logger>

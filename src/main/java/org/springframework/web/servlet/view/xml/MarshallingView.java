@@ -30,7 +30,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.view.AbstractView;
 
-import cn.com.cennavi.kfgis.framework.contant.FrameworkGISContants;
+import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkGISContants;
 
 /**
  * Spring-MVC {@link View} that allows for response context to be rendered as the result of marshalling by a {@link

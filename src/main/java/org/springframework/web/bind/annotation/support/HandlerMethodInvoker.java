@@ -91,18 +91,18 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 import org.springframework.web.servlet.HandlerMapping;
 
-import cn.com.cennavi.kfgis.bean.RequestBean;
-import cn.com.cennavi.kfgis.bean.param.AbstractParams;
-import cn.com.cennavi.kfgis.bean.param.IParams;
-import cn.com.cennavi.kfgis.framework.annotation.FieldTypeValid;
-import cn.com.cennavi.kfgis.framework.annotation.NotNullValid;
-import cn.com.cennavi.kfgis.framework.annotation.RestBeanVariable;
-import cn.com.cennavi.kfgis.framework.contant.FrameworkErrorMsgContants;
-import cn.com.cennavi.kfgis.framework.contant.FrameworkGISContants;
-import cn.com.cennavi.kfgis.framework.exception.NInvalidParamException;
-import cn.com.cennavi.kfgis.framework.exception.NNullParamException;
-import cn.com.cennavi.kfgis.framework.util.RequestUtil;
-import cn.com.cennavi.kfgis.framework.validator.AnnotationValidator;
+import com.kevin.iesutdio.kfgis.bean.RequestBean;
+import com.kevin.iesutdio.kfgis.bean.param.AbstractParams;
+import com.kevin.iesutdio.kfgis.bean.param.IParams;
+import com.kevin.iesutdio.kfgis.web.framework.annotation.FieldTypeValid;
+import com.kevin.iesutdio.kfgis.web.framework.annotation.NotNullValid;
+import com.kevin.iesutdio.kfgis.web.framework.annotation.RestBeanVariable;
+import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkErrorMsgContants;
+import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkGISContants;
+import com.kevin.iesutdio.kfgis.web.framework.exception.NInvalidParamException;
+import com.kevin.iesutdio.kfgis.web.framework.exception.NNullParamException;
+import com.kevin.iesutdio.kfgis.web.framework.util.RequestUtil;
+import com.kevin.iesutdio.kfgis.web.framework.validator.AnnotationValidator;
 
 /**
  * Support class for invoking an annotated handler method. Operates on the

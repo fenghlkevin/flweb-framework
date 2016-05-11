@@ -48,9 +48,9 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.util.NestedServletException;
 import org.springframework.web.util.WebUtils;
 
-import cn.com.cennavi.kfgis.bean.RequestBean;
-import cn.com.cennavi.kfgis.bean.ResponseBean;
-import cn.com.cennavi.kfgis.framework.contant.FrameworkGISContants;
+import com.kevin.iesutdio.kfgis.bean.RequestBean;
+import com.kevin.iesutdio.kfgis.bean.ResponseBean;
+import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkGISContants;
 
 /**
  * Base servlet for Spring's web framework. Provides integration with
