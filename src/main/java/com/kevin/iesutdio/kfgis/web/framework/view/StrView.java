@@ -28,7 +28,7 @@ import org.springframework.web.servlet.view.AbstractView;
  * Department: 技术开发部
  * </p>
  * 
- * @author fengheliang fengheliang@cennavi.com.cn
+ * @author fengheliang fenghlkevin@gmail.com
  * @version 1.0
  * @update 修改日期 修改描述
  */

@@ -15,7 +15,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
  * <p>Company: 沈阳世纪高通科技有限公司</p>
  * <p>Department: 技术开发部</p>
  * 
- * @author Kevin Feng fengheliang@cennavi.com.cn
+ * @author Kevin Feng fenghlkevin@gmail.com
  * @version 1.0
  * @update 修改日期 修改描述
  */
