@@ -36,9 +36,11 @@ public class ConfigureContextListener implements ServletContextListener {
 
     private static final String ROOTCONFIG_INITROOTCONTROLLER = "initRootController";
 
-    private static final String ROOTCONFIG_INITDBCONFIG = "initDBConfig";
-
-    private static final String ROOTCONFIG_INITDBERROR = "initDBError";
+    private static final String ROOTCONFIG_INITLOCALE = "initLocale";
+//
+//    private static final String ROOTCONFIG_INITDBCONFIG = "initDBConfig";
+//
+//    private static final String ROOTCONFIG_INITDBERROR = "initDBError";
 
 //    private static final String ROOTCONFIG_INITCOUCHBASE = "initCouchBase";
 
@@ -51,53 +53,57 @@ public class ConfigureContextListener implements ServletContextListener {
             RootController.loadRootControllers(cl);
         }
 
-        boolean initDBConfig = "true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITDBCONFIG));
-        boolean initDBError = "true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITDBERROR));
-        if (initDBConfig && initDBError) {
-            ApplicationContext ac2 = WebApplicationContextUtils.getWebApplicationContext(sce.getServletContext());
-            IAuthDAO authDao = (IAuthDAO) ac2.getBean("authDAOImpl");
-            readConfigureFromDao(authDao);
+        if("true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITLOCALE))){
             this.initLocaleStr((Locale) ConfigureFactory.getInstance().getConfigure(Locale.class), sce);
         }
-    }
 
-    public void readConfigureFromDao(IAuthDAO authDao) {
-        Map<String, String> keys = new HashMap<String, String>();
-        Map<String, String> groups = new HashMap<String, String>();
-       System.out.println("初始化DynamicConfigure");
-        authDao.queryDynamicConfigure(keys, groups);
-
-        String[] homeKeys = System.getProperties().keySet().toArray(new String[0]);
-
-        String[] tempkeys = keys.keySet().toArray(new String[0]);
-        for (String tempKey : tempkeys) {
-            String temp = keys.get(tempKey);
-            for (String varName : homeKeys) {
-                String varValue = System.getProperty(varName);
-                temp = temp.replace("${" + varName + "}", varValue);
-            }
-            keys.put(tempKey, temp);
-        }
-
-        //       System.out.println("初始化StaticConfigure");
-        //        authDao.queryStaticConfigure(keys, groups);
-        //       System.out.println("初始化ErrorConfigure");
-        //        authDao.queryErrorConfigure(keys, groups);
-
-       System.out.println("初始化ConfigureFactory");
-        ConfigureFactory cf = ConfigureFactory.getInstance();
-        cf.setGroups(groups);
-        cf.setKeys(keys);
-        ErrorConfigureFactory.setConfigure(null);
-       System.out.println("初始化ErrorConfigureFactory");
-        ErrorConfigureFactory.getInstance();
-
-//        if ("true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITCOUCHBASE))) {
-//           System.out.println("初始化CouchBase服务器");
-//            CouchBaseParams cbp = (CouchBaseParams) cf.getConfigure(CouchBaseParams.class);
-//            CouchBaseClient2.newInstance(cbp);
+//        boolean initDBConfig = "true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITDBCONFIG));
+//        boolean initDBError = "true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITDBERROR));
+//        if (initDBConfig && initDBError) {
+//            ApplicationContext ac2 = WebApplicationContextUtils.getWebApplicationContext(sce.getServletContext());
+//            IAuthDAO authDao = (IAuthDAO) ac2.getBean("authDAOImpl");
+//            readConfigureFromDao(authDao);
+//            this.initLocaleStr((Locale) ConfigureFactory.getInstance().getConfigure(Locale.class), sce);
 //        }
     }
+
+//    public void readConfigureFromDao(IAuthDAO authDao) {
+//        Map<String, String> keys = new HashMap<String, String>();
+//        Map<String, String> groups = new HashMap<String, String>();
+//       System.out.println("初始化DynamicConfigure");
+//        authDao.queryDynamicConfigure(keys, groups);
+//
+//        String[] homeKeys = System.getProperties().keySet().toArray(new String[0]);
+//
+//        String[] tempkeys = keys.keySet().toArray(new String[0]);
+//        for (String tempKey : tempkeys) {
+//            String temp = keys.get(tempKey);
+//            for (String varName : homeKeys) {
+//                String varValue = System.getProperty(varName);
+//                temp = temp.replace("${" + varName + "}", varValue);
+//            }
+//            keys.put(tempKey, temp);
+//        }
+//
+//        //       System.out.println("初始化StaticConfigure");
+//        //        authDao.queryStaticConfigure(keys, groups);
+//        //       System.out.println("初始化ErrorConfigure");
+//        //        authDao.queryErrorConfigure(keys, groups);
+//
+//       System.out.println("初始化ConfigureFactory");
+//        ConfigureFactory cf = ConfigureFactory.getInstance();
+//        cf.setGroups(groups);
+//        cf.setKeys(keys);
+//        ErrorConfigureFactory.setConfigure(null);
+//       System.out.println("初始化ErrorConfigureFactory");
+//        ErrorConfigureFactory.getInstance();
+//
+////        if ("true".equalsIgnoreCase(System.getProperty(ROOTCONFIG_INITCOUCHBASE))) {
+////           System.out.println("初始化CouchBase服务器");
+////            CouchBaseParams cbp = (CouchBaseParams) cf.getConfigure(CouchBaseParams.class);
+////            CouchBaseClient2.newInstance(cbp);
+////        }
+//    }
 
     private void initLocaleStr(Locale locale, ServletContextEvent sce) {
        System.out.println("加载国际化描述信息");
