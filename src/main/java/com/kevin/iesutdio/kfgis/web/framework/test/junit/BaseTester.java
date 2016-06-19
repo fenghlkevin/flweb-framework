@@ -34,7 +34,7 @@ public class BaseTester {
 
     @Before
     public void startup() {
-        ConfigureContextListener ccl = new ConfigureContextListener();
-        ccl.readConfigureFromDao(authDao);
+//        ConfigureContextListener ccl = new ConfigureContextListener();
+//        ccl.readConfigureFromDao(authDao);
     }
 }
