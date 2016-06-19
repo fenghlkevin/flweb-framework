@@ -3,7 +3,7 @@ package com.kevin.iesutdio.kfgis.web.framework.view.resultobj;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-import com.kevin.iesutdio.kfgis.web.framework.util.ObjUtil;
+import com.kevin.iesutdio.tools.clazz.ObjUtil;
 import org.codehaus.jackson.JsonEncoding;
 import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.map.ObjectMapper;

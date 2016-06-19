@@ -40,7 +40,7 @@ public class RequestUtil {
     public static byte[] getPostValue(InputStream request) {
         InputStream in = null;
         byte allBytes[] = new byte[0];
-        
+
         try{
             in = request;
             int i = in.read();
@@ -101,7 +101,7 @@ public class RequestUtil {
 
     /**
      * MARKSOURCE fenghl add
-     * 
+     *
      * @param clazz
      * @param fieldNameStr
      * @param declared

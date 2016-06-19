@@ -9,6 +9,8 @@ import com.kevin.iesutdio.kfgis.web.framework.annotation.EnumValid;
 import com.kevin.iesutdio.kfgis.web.framework.annotation.CustomValid;
 import com.kevin.iesutdio.kfgis.web.framework.annotation.Ignore;
 import com.kevin.iesutdio.kfgis.web.framework.annotation.LengthValid;
+import com.kevin.iesutdio.tools.clazz.ObjUtil;
+import com.kevin.iesutdio.tools.clazz.ObjectUtil;
 import org.springframework.validation.FieldError;
 
 import com.kevin.iesutdio.kfgis.web.framework.annotation.ICustomValidator;
@@ -16,8 +18,6 @@ import com.kevin.iesutdio.kfgis.web.framework.annotation.NotNullValid;
 import com.kevin.iesutdio.kfgis.web.framework.annotation.NumberValid;
 import com.kevin.iesutdio.kfgis.web.framework.annotation.RegexValid;
 import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkErrorMsgContants;
-import com.kevin.iesutdio.kfgis.web.framework.util.ObjUtil;
-import com.kevin.iesutdio.kfgis.util.ObjectUtil;
 
 /**
  * 注解校验

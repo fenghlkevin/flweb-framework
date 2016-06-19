@@ -12,11 +12,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 
 import com.kevin.iesutdio.kfgis.web.framework.file.IFileParse;
+import com.kevin.iesutdio.tools.clazz.ObjUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kevin.iesutdio.kfgis.web.framework.contant.LoggerContant;
-import com.kevin.iesutdio.kfgis.web.framework.util.ObjUtil;
 
 public abstract class NAbstractFileDataParser<T> implements IFileParse<T> {
 

@@ -4,26 +4,26 @@
   <groupId>com.kevin.iesutdio</groupId>
   <artifactId>flweb-famework</artifactId>
   <packaging>jar</packaging>
-  <version>1.5.19</version>
+  <version>1.6.0</version>
   <name>flweb-famework Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <distributionManagement>
-    <repository>
-      <id>nexus-releases</id>
-      <name>Nexus Release Repository</name>
-      <url>${nexus.release}</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <name>Nexus Snapshot Repository</name>
-      <url>${nexus.snapshot}</url>
-    </snapshotRepository>
-  </distributionManagement>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <nexus.release>http://192.168.10.217:8994/nexus/content/repositories/releases/</nexus.release>
-    <nexus.snapshot>http://192.168.10.217:8994/nexus/content/repositories/snapshots/</nexus.snapshot>
-  </properties>
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Nexus Release Repository</name>
+            <url>${nexus.release}</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>${nexus.snapshot}</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <nexus.release>http://199.193.255.161:8994/nexus/content/repositories/releases/</nexus.release>
+        <nexus.snapshot>http://199.193.255.161:8994/nexus/content/repositories/snapshots/</nexus.snapshot>
+    </properties>
   <build>
       	<resources>
       	    <resource>
@@ -245,8 +245,17 @@
     <dependency>
       <groupId>com.iestudio.log</groupId>
       <artifactId>com-iestudio-log</artifactId>
-      <version>1.1.5</version>
-       <scope>provided</scope>
+      <version>1.2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.kevin.iesutdio</groupId>
+      <artifactId>base-tools</artifactId>
+      <version>1.5</version>
+    </dependency>
+    <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.5</version>
     </dependency>
 	<dependency>
 		<groupId>axis</groupId>

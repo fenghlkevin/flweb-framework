@@ -5,11 +5,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.kevin.iesutdio.kfgis.web.framework.contant.FrameworkGISContants;
+import com.kevin.iesutdio.tools.base64.SBase64;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.kevin.iesutdio.kfgis.bean.RequestBean;
 import com.kevin.iesutdio.kfgis.bean.ResponseBean;
-import com.kevin.iesutdio.kfgis.util.SBase64;
 
 public class CommonLoggerHandlerInterceptor extends HandlerInterceptorAdapter {
 

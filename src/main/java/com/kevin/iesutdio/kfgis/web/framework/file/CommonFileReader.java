@@ -1,8 +1,8 @@
 package com.kevin.iesutdio.kfgis.web.framework.file;
 
-import java.io.File;
+import com.kevin.iesutdio.tools.clazz.ObjUtil;
 
-import com.kevin.iesutdio.kfgis.web.framework.util.ObjUtil;
+import java.io.File;
 
 /**
  * 读取文件

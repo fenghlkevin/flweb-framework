@@ -5,11 +5,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import com.kevin.iesutdio.kfgis.web.framework.file.IFileParse;
+import com.kevin.iesutdio.tools.clazz.ObjUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.kevin.iesutdio.kfgis.web.framework.contant.LoggerContant;
-import com.kevin.iesutdio.kfgis.web.framework.util.ObjUtil;
 
 /**
  * @author fengheliang
